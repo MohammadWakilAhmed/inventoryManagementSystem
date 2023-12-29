@@ -179,8 +179,18 @@ div.loginButton button{
 
 div.header{
     width: 100%;
-    height: 10px;
+    padding: 20px 0px;
     background: chocolate;
+    text-align:center;
+}
+
+div.header a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 5px 10px;
 }
 
 div.banner{
@@ -188,6 +198,7 @@ div.banner{
     background-size: cover;
     padding-top: 50px;
     padding-bottom: 100px;
+    height: 80vh;
 }
 
 div.homepageContainer{
@@ -209,6 +220,7 @@ div.bannerHeader p{
     color: chocolate;
     margin: 0px;
     line-height: 100%;
+    font-weight: bold;
 }
 
 p.bannerTagline{
@@ -257,15 +269,15 @@ div.homepageFeature{
 }
 
 div.homepageFeature span.featureIcon{
-    height:80px;
-    width: 80px;
-    border-radius: 50%;
+    height:60px;
+    width: 60px;
+    display: inline-block;
+    font-size: 30px;
     background: chocolate;
     color: white;
-    display: inline-block;
+    border-radius: 50%;
     text-align: center;
-    line-height: 80px;
-    font-size: 40px;
+    line-height: 60px;
     margin-bottom: 20px;
 
 }
@@ -273,17 +285,19 @@ div.homepageFeature span.featureIcon{
 div.homepageFeature h3.featureTitle{
     margin-bottom: 20px;
     font-weight: bold;
+    font-size: 25px;
 }
 
 div.homepageFeature p.featureDescription{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color:lightslategray;
 }
 
 div.homepageNotified{
     display: flex;
     flex-direction: row;
-    background: rgba(172, 160, 160, 0.5);
+    background: #e3e3e3;
+    padding-top: 0%;
 }
 
 div.formContainer button{
@@ -330,6 +344,7 @@ div.homepageNotifiedContainer{
 div.homepageNotified h3{
     margin-bottom: 20px;
     font-weight: bold;
+    font-size: 25px;
 }
 
 div.homepageNotified p{
@@ -343,6 +358,9 @@ div.socials{
     padding: 60px 0px 30px 0px;
 }
 
+h3.socialHeader{
+    font-size: 30px;
+}
 p.socialText{
     margin-top: 15px;
     margin-bottom: 25px;
@@ -360,4 +378,23 @@ div.socialsIcon a{
     margin-left: 20px;
     line-height: 40px;
     text-align: center;
+    color: #fff;
 }
+
+div.socialsIcon a:hover{
+    background: chocolate;
+    transition: 1s all;
+}
+
+div.footer{
+    background: #e3e3e3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+div.footer a{
+    color: #848484;
+    margin-left: 30px;
+}
+
