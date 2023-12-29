@@ -191,6 +191,7 @@ div.banner{
 div.homepageContainer{
     width: 100%;
     max-width: 900px;
+    height: 70vh;
     margin: 0 auto;
 }
 
@@ -233,4 +234,50 @@ div.bannerIcons a{
 
 div.bannerIcons a:first-child{
     margin-left: 0px;
+}
+
+div.bannerIcons a:hover{
+    background: chocolate;
+    color: white;
+    transition: 1s all;
+}
+
+div.homepageFeatures{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+}
+
+div.homepageFeature{
+    padding: 10px 20px;
+    text-align: center;
+}
+
+div.homepageFeature span.featureIcon{
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+    background: chocolate;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 80px;
+    font-size: 40px;
+    margin-bottom: 20px;
+
+}
+
+div.homepageFeature h3.featureTitle{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+div.homepageFeature p.featureDescription{
+    margin-bottom: 20px;
+    color:lightslategray;
+}
+
+div.homepageNotified{
+    display: flex;
+    flex-direction: row;
 }
