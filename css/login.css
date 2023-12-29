@@ -166,6 +166,7 @@ div.loginCredentials input{
 div.loginButton{
     margin-top: 40px;
     text-align: center;
+    
 }
 div.loginButton button{
     font-size: 30px;
@@ -173,6 +174,7 @@ div.loginButton button{
     background: chocolate;
     border: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 div.header{
@@ -190,9 +192,10 @@ div.banner{
 
 div.homepageContainer{
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     height: 70vh;
     margin: 0 auto;
+
 }
 
 div.bannerHeader h1{
@@ -280,4 +283,81 @@ div.homepageFeature p.featureDescription{
 div.homepageNotified{
     display: flex;
     flex-direction: row;
+    background: rgba(172, 160, 160, 0.5);
+}
+
+div.formContainer button{
+    background: chocolate;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 22px;
+    padding: 0px 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+
+div.formContainer{
+    width: 95%;
+    position: relative;
+}
+
+div.formContainer input{
+    height: 30px;
+    width: 100%;
+    border: 2px solid chocolate;
+    font-size: 15px;
+    padding: 15px 10px;
+    font-style: italic;
+    background:rgb(180, 211, 243);
+    font-weight: lighter;
+    color: lightslategray;
+    position: relative;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+div.homepageNotifiedContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+div.homepageNotified h3{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+div.homepageNotified p{
+    margin-bottom: 20px;
+    color:rgb(0, 0, 0);
+    line-height: 150%;
+}
+
+div.socials{
+    text-align: center;
+    padding: 60px 0px 30px 0px;
+}
+
+p.socialText{
+    margin-top: 15px;
+    margin-bottom: 25px;
+    color: #848484;
+}
+
+div.socialsIcon a{
+    font-size: 23px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    padding-top: 7px;
+    background: #d4d4d4d4;
+    border-radius: 50%;
+    margin-left: 20px;
+    line-height: 40px;
+    text-align: center;
 }
