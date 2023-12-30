@@ -398,3 +398,17 @@ div.footer a{
     margin-left: 30px;
 }
 
+/*Dashboard Style*/
+
+div.dashboardMainContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+div.dashboard_sidebar{
+    width: 30%;
+}
+
+div.dashboard_sidebar{
+    width: 30%;
+}
