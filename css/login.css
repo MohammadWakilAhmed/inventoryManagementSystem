@@ -406,9 +406,91 @@ div.dashboardMainContainer{
 }
 
 div.dashboard_sidebar{
-    width: 30%;
+    width: 20%;
+    background: rgb(41, 39, 39);
+    height: 100vh;
 }
 
-div.dashboard_sidebar{
-    width: 30%;
+h3.dashboard_logo{
+    color:chocolate;
+    font-size: 80px;
+    text-align: center;
 }
+div.dashboard_content_container{
+    width:80%;
+    background: #f4f6f9;
+}
+
+
+div.dashboard_sidebar_user{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+div.dashboard_sidebar_user img{
+    width: 80px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid chocolate;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+div.dashboard_sidebar_user span{
+    top: 20%;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #fff;
+}
+
+ul.dashboard_menu_lists{
+    margin-top: 20px;
+}
+ul.dashboard_menu_lists li{
+    padding: 15px 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+ul.dashboard_menu_lists li a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+
+}
+ul.dashboard_menu_lists li a.menuActive{
+
+}
+ul.dashboard_menu_lists li a:hover{
+    background: chocolate;
+    transition: 1s all;
+    color: #fff;
+}
+div.dashboard_topNav{
+    background: #fff;
+    padding: 20px;
+}
+
+div.dashboard_topNav{
+    color: #848383;
+    font-size: 20px;
+    text-decoration:none;
+}
+
+a#logoutBtn{
+    float: right;
+}
+
+div.dashboard_content{
+    padding: 50px 10px 10px 10px;
+}
+
+div.dashboard_content_main{
+    background: #fff;
+    min-height: 800px;
+    height: 100%;
+}
+
+
+
