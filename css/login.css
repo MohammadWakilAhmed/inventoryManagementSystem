@@ -473,7 +473,7 @@ div.dashboard_topNav{
 }
 
 div.dashboard_topNav{
-    color: #848383;
+    color: #8b8686;
     font-size: 20px;
     text-decoration:none;
 }
@@ -484,6 +484,8 @@ a#logoutBtn{
 
 div.dashboard_content{
     padding: 50px 10px 10px 10px;
+    background:rgb(218, 212, 212);
+
 }
 
 div.dashboard_content_main{
@@ -492,5 +494,12 @@ div.dashboard_content_main{
     height: 100%;
 }
 
+div#errorMessage{
+    background: #fff;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    padding: 11px;
+}
 
 

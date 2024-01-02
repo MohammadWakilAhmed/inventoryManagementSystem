@@ -10,7 +10,7 @@
   <body>
 
     <div class="header">
-        <a href="login.html">Login</a>
+            <a href="login.php">Login</a>
     </div>
     <div class="banner">
       <div class="homepageContainer">
