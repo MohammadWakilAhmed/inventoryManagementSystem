@@ -19,6 +19,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <script src="https://kit.fontawesome.com/97c583544d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
     <div class="dashboardMainContainer">
@@ -27,46 +28,46 @@
             <?php include('partials/app-topnav.php') ?>
             <div class="dashboard_content">
                 <div class="dashboard_content_main">
+                    <div id="userAddFormContainer">
+
+                    <form action="database/add.php" method="POST" class="appForm">
+                        <div class="appFormInputContainers">
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="appFormInput" id="first_name" name="first_name" />
+                        </div>
+                        <div class="appFormInputContainers">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="appFormInput" id="last_name" name="last_name" />
+                        </div>
+                        <div class="appFormInputContainers">
+                            <label for="email">Email</label>
+                            <input type="text" class="appFormInput" id="email" name="email" />
+                        </div>
+                        <div class="appFormInputContainers">
+                            <label for="password">Password</label>
+                            <input type="password" class="appFormInput" id="password" name="password" />
+                        </div>
+                        <button type="submit" class="appBtn"><i class="fa fa-plus"></i> Add User</button>
+
+                    </form>
+                    <?php if(isset($_SESSION['response'])) { 
+                        $response_message = $_SESSION['response']['message'];
+                        $is_success = $_SESSION['response']['success'];
+                        
+                    ?>
+                        <div class="responseMessage">
+                            <p class="<?= $is_success ? 'responseMessage_success': 'responseMessage_error'?>">
+                                <?= $response_message ?>
+                        </p>
+                        </div>
+
+                    <?php unset($_SESSION['response']); } ?>
+                    </div>
                 </div>
             </div>           
         </div>
     </div>
-<script>
-    var sideBarIsOpen = true;
-
-    toggleBtn.addEventListener( 'click', (event) =>{
-        event.preventDefault();
-
-        if(sideBarIsOpen){
-            dashboard_sidebar.style.width = '10%';
-            dashboard_sidebar.style.transition = '0.3s all'
-            dashboard_content_container.style.width = '90%';
-            dashboard_logo.style.fontSize = '60px';
-            userImage.style.width = '60px';
-
-            menuIcons = document.getElementsByClassName('menuText');
-            for(let i = 0; i < menuIcons.length; i++){
-                menuIcons[i].style.display = 'none';
-            }
-
-            document.getElementsByClassName('dashboard_menu_lists')[0].style.textAlign = 'center';
-            sideBarIsOpen = false;
-        } else{
-            dashboard_sidebar.style.width = '20%';
-            dashboard_content_container.style.width = '80%';
-            dashboard_logo.style.fontSize = '80px';
-            userImage.style.width = '80px';
-
-            menuIcons = document.getElementsByClassName('menuText');
-            for(let i = 0; i < menuIcons.length; i++){
-                menuIcons[i].style.display = 'inline-block';
-            }
-
-            document.getElementsByClassName('dashboard_menu_lists')[0].style.textAlign = 'left';
-            sideBarIsOpen = true;
-        }
-    });
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

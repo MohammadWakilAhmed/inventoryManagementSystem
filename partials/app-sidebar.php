@@ -8,23 +8,12 @@
             
             <div class="dashboard_sidebar_menus">
                 <ul class="dashboard_menu_lists">
-                    <li class="menuActive">
-                        <a href="" class="menuActive"><i class="fa-solid fa-gauge-high"></i><span class="menuText">   Dashboard</span></a>
+                    <!-- class="menuActive" -->
+                    <li>
+                        <a href="./dashboard.php"><i class="fa-solid fa-gauge-high"></i><span class="menuText">   Dashboard</span></a>
                     </li>
                     <li>
-                        <a href=""><i class="fa-solid fa-bullhorn"></i><span class="menuText">   Campaigns</span></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fa-solid fa-dollar"></i><span class="menuText">   Revenue Management</span></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fa-solid fa-book"></i><span class="menuText">   Accounts Receivable</span></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fa-solid fa-gears"></i><span class="menuText">   Configuration</span></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fa-solid fa-line-chart"></i><span class="menuText">   Stats</span></a>
+                        <a href="./users-add.php"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Add User</span></a>
                     </li>
                 </ul>
             </div>
