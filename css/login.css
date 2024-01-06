@@ -542,5 +542,18 @@ button.appBtn{
     float: right;
     cursor: pointer;
 }
+p.responseMessage{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 33px;
+    background: green;
+    padding: 20px;
+}
+p.responseMessage__error{
+    background: rgba(128, 0, 0, 0.1);
+}
+p.responseMessage__success{
+    background: rgba(0, 128, 0, 0.1);
+}
 
 

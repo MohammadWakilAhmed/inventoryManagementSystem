@@ -27,6 +27,7 @@
         <div class="dashboard_content_container" id="dashboard_content_container">
             <?php include('partials/app-topnav.php') ?>
             <div class="dashboard_content">
+                
                 <div class="dashboard_content_main">
                     <div id="userAddFormContainer">
 
@@ -44,8 +45,8 @@
                             <input type="text" class="appFormInput" id="email" name="email" />
                         </div>
                         <div class="appFormInputContainers">
-                            <label for="password">Password</label>
-                            <input type="password" class="appFormInput" id="password" name="password" />
+                            <label for="passwords">Password</label>
+                            <input type="password" class="appFormInput" id="passwords" name="passwords" />
                         </div>
                         <button type="submit" class="appBtn"><i class="fa fa-plus"></i> Add User</button>
 
@@ -56,7 +57,13 @@
                         
                     ?>
                         <div class="responseMessage">
-                            <p class="<?= $is_success ? 'responseMessage_success': 'responseMessage_error'?>">
+                            <p class="responseMessage <?= $is_success ? 'responseMessage__success' : 
+                            'responseMessage__error' ?>" 
+                            style = "font-size: 22px; 
+                                     text-align: center;
+                                     margin-top: 30px;
+                                     background: green;
+                                     padding: 20px;">
                                 <?= $response_message ?>
                         </p>
                         </div>
