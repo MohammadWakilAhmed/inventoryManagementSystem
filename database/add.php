@@ -30,8 +30,7 @@ try {
     $response = [
       'success' => false,
       'message' => $e->getMessage()
-    ];
-    
+    ];   
 } 
   $_SESSION['response'] = $response;
   header('location: ../users-add.php');
