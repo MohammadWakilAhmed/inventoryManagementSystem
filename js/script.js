@@ -32,3 +32,5 @@ toggleBtn.addEventListener( 'click', (event) =>{
         sideBarIsOpen = true;
     }
 });
+
+console.log(document.querySelectorAll('.liMainMenu_link'));

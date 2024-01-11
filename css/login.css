@@ -447,22 +447,24 @@ div.dashboard_sidebar_user span{
 ul.dashboard_menu_lists{
     margin-top: 20px;
 }
-ul.dashboard_menu_lists li{
-    padding: 15px 15px;
-    font-size: 18px;
+ul.dashboard_menu_lists li.liMainMenu{
+    padding: 15px 0px;
     text-transform: uppercase;
 }
-ul.dashboard_menu_lists li a{
+ul.dashboard_menu_lists li.liMainMenu a{
     text-decoration: none;
     color: #fff;
     display: block;
-    font-size: 20px;
+    font-size: 14px;
+    padding: 0px 15px;
 
 }
-ul.dashboard_menu_lists li a.menuActive{
+ul.dashboard_menu_lists li.liMainMenu a i{
+    font-size: 23px;
+    width: 30px;
 
 }
-ul.dashboard_menu_lists li a:hover{
+ul.dashboard_menu_lists li.liMainMenu a:hover{
     background: chocolate;
     transition: 1s all;
     color: #fff;
@@ -609,5 +611,15 @@ p.userCount{
     font-weight: bold;
     text-transform: uppercase;
     color: chocolate;
+}
+li.subMenulink{
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: none;
+}
+
+ul.submenus{
+    display: none;
 }
 
