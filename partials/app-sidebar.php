@@ -18,12 +18,13 @@
                     <li class="liMainMenu">
                         <a href="#"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Supplier Management</span></a>
                     </li>
-                    <li class="liMainMenu">
-                        <a href="javascript:void(0);" class="liMainMenu_link">
-                            <i class="fa-solid fa-user-plus"></i><span class="menuText">   User Management</span>
-                            <i class="fa fa-angle-left mainMenuIconArrow" style="float:right; text-align:center; margin-top: 2px;"></i>
+                    <li class="liMainMenu showHideSubMenu" data-submenu="user">
+                        <a href="javascript:void(0);" class=" showHideSubMenu" data-submenu="user">
+                            <i class="fa-solid fa-user-plus showHideSubMenu" data-submenu="user"></i>
+                            <span class="menuText showHideSubMenu" data-submenu="user">   User Management</span>
+                            <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" data-submenu="user" style="float:right; text-align:center; margin-top: 2px;"></i>
                         </a>
-                        <ul class="subMenus" style="display: none;">
+                        <ul class="subMenus" id="user" style="display: none;">
                             <li><a style="padding-left: 25px;
                                         padding-top: 10px;
                                         padding-bottom: 10px;

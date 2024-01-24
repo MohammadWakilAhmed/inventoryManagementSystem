@@ -33,4 +33,19 @@ toggleBtn.addEventListener( 'click', (event) =>{
     }
 });
 
-console.log(document.querySelectorAll('.liMainMenu_link'));
+// Submenu show / hide function
+document.addEventListener('click', function(e){
+    let clickedEl = e.target;
+
+    if(clickedEl.classList.contains('showHideSubMenu')){
+        let targetMenu = clickedEl.dataset.submenu;
+        
+        // Check if there is submenu
+        if(targetMenu != undefined){ 
+            let subMenu = document.getElementById(targetMenu);
+
+            if(subMenu.style.display === 'block') subMenu.style.display = 'none';
+            else subMenu.style.display = 'block';
+        }
+    }
+});
