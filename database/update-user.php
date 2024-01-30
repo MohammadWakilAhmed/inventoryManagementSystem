@@ -15,7 +15,7 @@ try {
 
     echo json_encode([
         'success' => true,
-        'message' => $first_name . ' '. $last_name. ' successfully deleted.'
+        'message' => $first_name . ' '. $last_name. ' successfully Edited.'
     ]);
 } catch(PDOException $e) {
     echo json_encode([

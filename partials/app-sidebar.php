@@ -13,7 +13,7 @@
                         <a href="./dashboard.php"><i class="fa-solid fa-gauge-high"></i><span class="menuText">   Dashboard</span></a>
                     </li>
                     <li class="liMainMenu">
-                        <a href="#"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Product Management</span></a>
+                        <a href="./product-add.php"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Product Management</span></a>
                     </li>
                     <li class="liMainMenu">
                         <a href="#"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Supplier Management</span></a>
@@ -29,11 +29,11 @@
                                         padding-top: 10px;
                                         padding-bottom: 10px;
                                         text-transform: none;
-                            "href="#"><i class="fa fa-circle"></i> View Users</a></li>
+                            "href="./users-add.php"><i class="fa fa-circle"></i> View Users</a></li>
                             <li><a style="padding-left: 25px;
                                         padding-top: 10px;
                                         padding-bottom: 10px;
-                                        text-transform: none;"href="#"><i class="fa fa-circle"></i> Add Users</a></li>
+                                        text-transform: none;"href="./users-add.php"><i class="fa fa-circle"></i> Add Users</a></li>
                         </ul>
                     </li>
                 </ul>

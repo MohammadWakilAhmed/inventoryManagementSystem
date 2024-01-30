@@ -210,17 +210,16 @@ div.homepageContainer{
 }
 
 div.bannerHeader h1{
-    font-size: 100px;
-    color: chocolate;
+    font-size: 80px;
+    color: white;
     line-height: 100%;
 }
 
 div.bannerHeader p{
     font-size: 30px;
-    color: chocolate;
+    color: rgb(255, 255, 255);
     margin: 0px;
     line-height: 100%;
-    font-weight: bold;
 }
 
 p.bannerTagline{

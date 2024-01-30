@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IMS HomePage - Inventory Management System</title>
+    <title>Insightful Inventory - Gain invaluable insights into your stock with Organized stock management</title>
     <link rel="stylesheet" type="text/css" href="css/login.css" />
     <script src="https://kit.fontawesome.com/97c583544d.js" crossorigin="anonymous"></script>
   </head>
@@ -15,8 +15,8 @@
     <div class="banner">
       <div class="homepageContainer">
         <div class="bannerHeader">
-          <h1>IMS</h1>
-          <p>Inventory Management System</p>
+          <h1 style= "color: white; font-size: 80px; " >Insightful Inventory</h1>
+          <p style= "color: white;">Gain invaluable insights into your stock with Organized stock management</p>
         </div>
         <p class="bannerTagline">
           Track your Goods with the help of our services
