@@ -18,6 +18,8 @@
     if($stmt->rowCount() > 0){
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $user = $stmt->fetchALL()[0];
+
+        // Captures data of currently login users
         $_SESSION['user'] = $user;
 
         header('location: dashboard.php');
@@ -46,7 +48,7 @@
     
     <div class="container">
         <div class="loginHeader">
-            <h1>IMS</h1>
+            <h1>INSIGHTFUL</h1>
             <p>Inventory Management System</p>
         </div>
         <div class="loginBody">

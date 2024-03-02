@@ -13,10 +13,10 @@
                         <a href="./dashboard.php"><i class="fa-solid fa-gauge-high"></i><span class="menuText">   Dashboard</span></a>
                     </li>
                     <li class="liMainMenu">
-                        <a href="./product-add.php"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Product Management</span></a>
+                        <a href="./product-add.php"><i class="fa-solid fa-tag"></i><span class="menuText">   Product Management</span></a>
                     </li>
                     <li class="liMainMenu">
-                        <a href="#"><i class="fa-solid fa-user-plus"></i><span class="menuText">   Supplier Management</span></a>
+                        <a href="#"><i class="fa-solid fa-truck"></i><span class="menuText">   Supplier Management</span></a>
                     </li>
                     <li class="liMainMenu showHideSubMenu" data-submenu="user">
                         <a href="javascript:void(0);" class=" showHideSubMenu" data-submenu="user">
