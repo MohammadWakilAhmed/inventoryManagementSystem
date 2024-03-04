@@ -5,7 +5,7 @@
     $_SESSION['table'] = 'products';
     $_SESSION['redirect_to']= 'product-add.php';
 
-    $user = $_SESSION['user']; 
+    $show_table = 'products'; 
     $users = include('database/show.php'); 
     // $_SESSION['user'] = [
     //    'email' => 'wakilahmedony@ims.com',
@@ -45,14 +45,16 @@
                                 </div>
                                 <div class="appFormInputContainers">
                                     <label for="description">Suppliers</label>
-                                    <select class="supplierOption" name="suppliers" id="suppliersSelect">
+                                    <select class="supplierOption" name="suppliers[]" id="suppliersSelect">
                                         <option class="supplierOption" value="">Select Supplier</option>
-                                        <option class="supplierOption" value="">Supplier 1</option>
-                                        <option class="supplierOption" value="">Supplier 2</option>
-                                        <option class="supplierOption" value="">Supplier 3</option>
-                                        <option class="supplierOption" value="">Supplier 4</option>
-                                        <option class="supplierOption" value="">Supplier 5</option>
-                                        <option class="supplierOption" value="">Supplier 6</option>
+                                        <?php
+                                        $show_table = 'suppliers';
+                                        $suppliers = include('database/show.php'); 
+
+                                        foreach($suppliers as $supplier){
+                                            echo "<option value='". $supplier['id'] . "'> ".$supplier['supplier_name'] ."</option>";
+                                        }
+                                        ?>
                                     </select>
                                 </div>
 

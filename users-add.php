@@ -5,7 +5,7 @@
     $_SESSION['table'] = 'users';
     $_SESSION['redirect_to']= 'users-add.php';
 
-    $user = $_SESSION['user']; 
+    $show_table = 'users';
     $users = include('database/show.php'); 
     // $_SESSION['user'] = [
     //    'email' => 'wakilahmedony@ims.com',

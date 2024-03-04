@@ -39,6 +39,7 @@ foreach ($columns as $column) {
 
           // Save the path to our database
       }
+      else if ($column == 'suppliers') $value = password_hash($_POST[$column], PASSWORD_DEFAULT);
       else $value = isset($_POST[$column]) ? $_POST[$column] : '';
 
       $db_arr[$column] = $value;

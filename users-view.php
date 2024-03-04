@@ -5,7 +5,7 @@
     $_SESSION['table'] = 'users';
     $user = $_SESSION['user']; 
 
-    $_SESSION['table'] = 'users';
+    $show_table = 'users';
     $users = include('database/show.php'); 
     // $_SESSION['user'] = [
     //    'email' => 'wakilahmedony@ims.com',
