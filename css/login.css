@@ -58,6 +58,7 @@ meter {
     appearance: revert;
 }
 
+
 /* preformatted text - use only for this feature */
 :where(pre) {
     all: revert;
@@ -102,7 +103,7 @@ meter {
 
 
 body#loginBody{
-    background: url('../images/login-ims.jpg') no-repeat center center fixed ;
+    background: url('../images/plain-white.jpg') no-repeat center center fixed ;
     background-size: cover;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
    
@@ -118,12 +119,12 @@ div.loginHeader{
 
 div.loginHeader h1{
     font-size: 60px;
-    color: chocolate;
+    color: rgb(0, 0, 0);
     margin: 0px;
 }
 
 div.loginHeader p{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-size: 50px;
     margin: 0px;
     border-bottom: 5px solid chocolate;
@@ -142,7 +143,7 @@ div.loginBody form{
 
 
 div.loginCredentials label{
-    color:aliceblue;
+    color:rgb(0, 0, 0);
     display: block;
     font-size: 20px;
     margin-top: 30px;
@@ -447,15 +448,17 @@ ul.dashboard_menu_lists{
     margin-top: 20px;
 }
 ul.dashboard_menu_lists li.liMainMenu{
-    padding: 15px 0px;
+    padding: 15px;
     text-transform: uppercase;
 }
 ul.dashboard_menu_lists li.liMainMenu a{
     text-decoration: none;
     color: #fff;
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     padding: 0px 15px;
+    padding-bottom: 15px;
+    padding-right: 0px;
 
 }
 ul.dashboard_menu_lists li.liMainMenu a i{
@@ -493,6 +496,8 @@ div.dashboard_content_main{
     background: #fff;
     min-height: 800px;
     height: 100%;
+    border: 3px solid #cdcdcd;
+    padding-left: 20px;
 }
 
 div#errorMessage{
@@ -512,9 +517,11 @@ form.appForm{
     width:90%;
     margin: 0 auto;
     padding: 10px;
-    border: 1px solid #cecfd0;
+    border: 5px solid #a19c9c;
     border-radius: 5px;
     background: #f4f6f9;
+    border-color: #a19c9c;
+    border-style: groove !important;
 }
 form label{
     font-weight: bold;
@@ -523,8 +530,11 @@ form label{
 form input.appFormInput{
     width: 100%;
     height: 33px;
-    border: 1px solid #d6d7da;
+    border: 5px solid #a19c9c;
+    border-color: #a19c9c;
+    border-style: groove !important;
     border-radius: 5px;
+    
 }
 div.appFormInputContainers{
     margin-bottom: 15px;
@@ -593,15 +603,16 @@ table{
     width: 100%;
 }
 table th{
-    font-size: 11px;
+    font-size: 18px;
     text-transform: uppercase;
     text-align: center;
     background: #c1d2eb;
     font-weight: bold;
+    padding: 10px
 }
 table tbody{
-    font-size: 13px;
-    text-align: left;
+    font-size: 17px;
+    text-align: center;
     padding: 10px;
 }
 p.userCount{
@@ -611,15 +622,29 @@ p.userCount{
     text-transform: uppercase;
     color: chocolate;
 }
-li.subMenulink{
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+a.subMenuLink{
+    padding-left: 25px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
     text-transform: none;
+    font-size: 15px !important;
 }
 
-ul.submenus{
+a.subMenuLink i{
+    font-size: 16px !important;
+    width: 16px !important;
+}
+
+ul.subMenus{
+    background: rgb(131, 65, 18);
     display: none;
+}
+
+i.mainMenuIconArrow{
+    float:right; 
+    font-size: 19px !important;
+    text-align:center; 
+    margin-top: 7px;
 }
 
 .productTextAreaInput{
@@ -627,5 +652,25 @@ ul.submenus{
     height: 75px;
     border-radius: 5px;
     border-color: #a19c9c;
+    border-style: groove !important;
 }
 
+.productImages{
+    width: 100px;
+    height: 100px;
+}
+
+.supplierOption{
+    border-radius: 5px;
+    border-color: #a19c9c;
+    border-style: groove !important;
+    
+}
+
+#suppliersSelect{
+    display: block;
+    width: 100%;
+    max-height: 100px;
+    height: 100%;
+    
+}

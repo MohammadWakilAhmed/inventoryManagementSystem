@@ -1,2 +1,2 @@
 # inventoryManagementSystem
- Creating an Inventory Management System From Srcatch Step by Step
+ Creating an Insightful Inventory Management System From Srcatch Step by Step

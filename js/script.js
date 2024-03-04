@@ -38,14 +38,34 @@ document.addEventListener('click', function(e){
     let clickedEl = e.target;
 
     if(clickedEl.classList.contains('showHideSubMenu')){
-        let targetMenu = clickedEl.dataset.submenu;
+        let subMenu = clickedEl.closest('li').querySelector('.subMenus');
+        let mainMenuIcon = clickedEl.closest('li').querySelector('.mainMenuIconArrow');
+
+        // Close all submenus
+        let subMenus = document.querySelectorAll('.subMenus');
+        subMenus.forEach((sub) => {
+            if(subMenu !== sub) sub.style.display = 'none';
+        });
         
         // Check if there is submenu
-        if(targetMenu != undefined){ 
-            let subMenu = document.getElementById(targetMenu);
-
-            if(subMenu.style.display === 'block') subMenu.style.display = 'none';
-            else subMenu.style.display = 'block';
+        if(subMenu != null) { 
+            if(subMenu.style.display === 'block'){
+                subMenu.style.display = 'none';
+                mainMenuIcon.classList.remove('fa-angle-down');
+                mainMenuIcon.classList.add('fa-angle-left');
+            }
+            else {
+                subMenu.style.display = 'block';
+                mainMenuIcon.classList.remove('fa-angle-left');
+                mainMenuIcon.classList.add('fa-angle-down');
+            }
         }
     }
 });
+
+// Add / hide active class to menu
+// Get the current page
+// Use selector to get the current menu or submenu
+// Add the active class
+
+

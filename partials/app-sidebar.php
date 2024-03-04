@@ -1,3 +1,6 @@
+<?php
+    $user = $_SESSION['user'];
+?>
 <div class="dashboard_sidebar" id="dashboard_sidebar" >
             <h3 class="dashboard_logo" id="dashboard_logo">IMS</h3>
             <div class="dashboard_sidebar_user">
@@ -12,28 +15,40 @@
                     <li class="liMainMenu">
                         <a href="./dashboard.php"><i class="fa-solid fa-gauge-high"></i><span class="menuText">   Dashboard</span></a>
                     </li>
+
                     <li class="liMainMenu">
-                        <a href="./product-add.php"><i class="fa-solid fa-tag"></i><span class="menuText">   Product Management</span></a>
-                    </li>
-                    <li class="liMainMenu">
-                        <a href="#"><i class="fa-solid fa-truck"></i><span class="menuText">   Supplier Management</span></a>
-                    </li>
-                    <li class="liMainMenu showHideSubMenu" data-submenu="user">
-                        <a href="javascript:void(0);" class=" showHideSubMenu" data-submenu="user">
-                            <i class="fa-solid fa-user-plus showHideSubMenu" data-submenu="user"></i>
-                            <span class="menuText showHideSubMenu" data-submenu="user">   User Management</span>
-                            <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" data-submenu="user" style="float:right; text-align:center; margin-top: 2px;"></i>
+                        <a href="javascript:void(0);" class=" showHideSubMenu">
+                            <i class="fa-solid fa-tag showHideSubMenu"></i>
+                            <span class="menuText showHideSubMenu">   Product Management</span>
+                            <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu"></i>
                         </a>
-                        <ul class="subMenus" id="user" style="display: none;">
-                            <li><a style="padding-left: 25px;
-                                        padding-top: 10px;
-                                        padding-bottom: 10px;
-                                        text-transform: none;
-                            "href="./users-add.php"><i class="fa fa-circle"></i> View Users</a></li>
-                            <li><a style="padding-left: 25px;
-                                        padding-top: 10px;
-                                        padding-bottom: 10px;
-                                        text-transform: none;"href="./users-add.php"><i class="fa fa-circle"></i> Add Users</a></li>
+                        <ul class="subMenus">
+                            <li><a class="subMenuLink" href="./product-view.php"><i class="fa fa-circle-o"></i> View Products</a></li>
+                            <li><a class="subMenuLink" href="./product-add.php"><i class="fa fa-circle-o"></i> Add Products</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="liMainMenu">
+                        <a href="javascript:void(0);" class=" showHideSubMenu">
+                            <i class="fa-solid fa-truck showHideSubMenu"></i>
+                            <span class="menuText showHideSubMenu">   Supplier Management</span>
+                            <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu"></i>
+                        </a>
+                        <ul class="subMenus">
+                            <li><a class="subMenuLink" href="#"><i class="fa fa-circle-o"></i> View Supplier</a></li>
+                            <li><a class="subMenuLink" href="#"><i class="fa fa-circle-o"></i> Add Supplier</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="liMainMenu showHideSubMenu">
+                        <a href="javascript:void(0);" class=" showHideSubMenu">
+                            <i class="fa-solid fa-user-plus showHideSubMenu"></i>
+                            <span class="menuText showHideSubMenu">   User Management</span>
+                            <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu"></i>
+                        </a>
+                        <ul class="subMenus">
+                            <li><a class="subMenuLink" href="./users-view.php"><i class="fa fa-circle-o"></i> View Users</a></li>
+                            <li><a class="subMenuLink" href="./users-add.php"><i class="fa fa-circle-o"></i> Add Users</a></li>
                         </ul>
                     </li>
                 </ul>
