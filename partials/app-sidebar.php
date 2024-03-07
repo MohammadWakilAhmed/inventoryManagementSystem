@@ -2,7 +2,7 @@
     $user = $_SESSION['user'];
 ?>
 <div class="dashboard_sidebar" id="dashboard_sidebar" >
-            <h3 class="dashboard_logo" id="dashboard_logo">IMS</h3>
+            <h3 class="dashboard_logo" id="dashboard_logo">Insightful Inventory Management System</h3>
             <div class="dashboard_sidebar_user">
                 <!--<img src="<?=$user['image'] ?>" alt="User image." id="userImage" />-->
                 <img src="images/user/wakil.jpeg" alt="User image." id="userImage" />
@@ -35,8 +35,20 @@
                             <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu"></i>
                         </a>
                         <ul class="subMenus">
-                            <li><a class="subMenuLink" href="#"><i class="fa fa-circle-o"></i> View Supplier</a></li>
-                            <li><a class="subMenuLink" href="#"><i class="fa fa-circle-o"></i> Add Supplier</a></li>
+                            <li><a class="subMenuLink" href="./supplier-view.php"><i class="fa fa-circle-o"></i> View Supplier</a></li>
+                            <li><a class="subMenuLink" href="./supplier-add.php"><i class="fa fa-circle-o"></i> Add Supplier</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="liMainMenu">
+                        <a href="javascript:void(0);" class=" showHideSubMenu">
+                            <i class="fa-solid fa-shopping-cart showHideSubMenu"></i>
+                            <span class="menuText showHideSubMenu">   Purchase Order</span>
+                            <i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu"></i>
+                        </a>
+                        <ul class="subMenus">
+                            <li><a class="subMenuLink" href="./product-order.php"><i class="fa fa-circle-o"></i> Create Order</a></li>
+                            <li><a class="subMenuLink" href="./view-order.php"><i class="fa fa-circle-o"></i> View Orders</a></li>
                         </ul>
                     </li>
 

@@ -2,8 +2,8 @@
     //Start the session.
     session_start();
     if(!isset($_SESSION['user'])) header('location: login.php');
+
     $show_table = 'products';
-    
     $products = include('database/show.php'); 
     // $_SESSION['user'] = [
     //    'email' => 'wakilahmedony@ims.com',
@@ -38,7 +38,8 @@
                                             <th>#</th>
                                             <th>Image</th>
                                             <th>Product Name</th>
-                                            <th>Description</th>
+                                            <th width="20%">Description</th>
+                                            <th width="15%">Suppliers</th>
                                             <th>Created By</th>
                                             <th>Created At</th>
                                             <th>Updated At</th>
@@ -54,10 +55,29 @@
                                                  </td>
                                                 <td class="lastName"><?= $product['product_name'] ?></td>
                                                 <td class="email"><?= $product['description'] ?></td>
+                                                <td class="email">
+                                                    <?php
+                                                        $supplier_list = '-';
+
+                                                        $pid = $product['id'];
+                                                        $stmt = $conn->prepare("SELECT supplier_name FROM suppliers, productsuppliers WHERE productsuppliers.product=$pid AND productsuppliers.supplier = suppliers.id");
+                                                        $stmt->execute();
+                                                        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                                                        if($row){
+                                                            $supplier_arr = array_column($row, 'supplier_name'); 
+                                                            $supplier_list = '<li>' . implode("</li><li>", $supplier_arr);
+                                                        }
+                                                        
+                                                        echo $supplier_list;
+
+                                                    ?>
+
+                                                </td>
                                                 <td>
                                                     <?php
-                                                        $pid = $product['created_by'];
-                                                        $stmt = $conn->prepare("SELECT * FROM users WHERE id=$pid");
+                                                        $uid = $product['created_by'];
+                                                        $stmt = $conn->prepare("SELECT * FROM users WHERE id=$uid");
                                                         $stmt->execute();
                                                         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -87,8 +107,22 @@
         </div>           
     </div>
 </div>
-<?php include('partials/app-scripts.php'); ?>
+<?php 
+    include('partials/app-scripts.php'); 
+
+    $show_table = 'suppliers';
+    $suppliers = include('database/show.php'); 
+
+    $suppliers_arr =[];
+
+    foreach($suppliers as $supplier){
+        $suppliers_arr[$supplier['id']] = $supplier['supplier_name'];
+    }
+    $suppliers_arr = json_encode($suppliers_arr);
+?>
 <script>
+    var suppliersList = <?= $suppliers_arr ?>;
+
     function script(){
         var vm = this;
         this.registerEvents = function(){
@@ -140,8 +174,6 @@
                     pId = targetElement.dataset.pid;
                     vm.showEditDialog(pId);
                 }
-
-                
             });
 
             document.addEventListener('submit', function(e){
@@ -180,12 +212,28 @@
 
         this.showEditDialog = function(id){
             $.get('database/get-product.php', {id: id}, function(productDetails){
+                let curSuppliers = productDetails['suppliers'];
+                let supplierOption = '';
+
+                for(const [supId, supName] of Object.entries(suppliersList)){
+                    selected = curSuppliers.indexOf(supId) > 1 ? 'selected' : '';
+                    supplierOption += "<option "+ selected +" value='"+ supId +"'>"+ supName +"</option>";
+                }
+
+
                 BootstrapDialog.confirm({
                         title: 'Update <strong>' + productDetails.product_name + '</strong>',
                         message:'<form action="database/add.php" method="POST" enctype="multipart/form-data" id="editProductForm">\
                         <div class="appFormInputContainers">\
                                     <label for="product_name">Product Name</label>\
                                     <input type="text" class="appFormInput" id="product_name" value="'+ productDetails.product_name +'" placeholder="Enter product name..." name="product_name" />\
+                                </div>\
+                                <div class="appFormInputContainers">\
+                                    <label for="description">Suppliers</label>\
+                                    <select class="supplierOption" name="suppliers[]" id="suppliersSelect" multiple="">\
+                                        <option class="supplierOption" value="">Select Supplier</option>\
+                                        ' + supplierOption + '\
+                                    </select>\
                                 </div>\
                                 <div class="appFormInputContainers">\
                                     <label for="description">Description</label>\

@@ -20,28 +20,31 @@ foreach ($columns as $column) {
           $target_dir = "../uploads/products/";
           $file_data = $_FILES[$column];
 
-          
 
-          $file_name = $file_data['name'];
-          $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-          $file_name = 'product-' . time() . '.' . $file_ext;
-          $check = getimagesize($file_data['tmp_name']);
+          $value = NULL;
+          $file_data = $_FILES['img'];
 
-          // Move the file
-          if($check){
-            if(move_uploaded_file($file_data['tmp_name'], $target_dir . $file_name)){
-              // Save the file_name to the database.
-              $value = $file_name;
-            }
-          } else{
-            // Do not move the files
+          if($file_data['tmp_name'] !== ''){
+              $file_name = $file_data['name'];
+              $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+              $file_name = 'product-' . time() . '.' . $file_ext;
+
+              $check = getimagesize($file_data['tmp_name']);
+
+
+              // Move the file
+              if($check){
+              if(move_uploaded_file($file_data['tmp_name'], $target_dir . $file_name)){
+                  // Save the file_name to the database.
+                  $value = $file_name;
+                  }
+              }
           }
-
+    
           // Save the path to our database
       }
-      else if ($column == 'suppliers') $value = password_hash($_POST[$column], PASSWORD_DEFAULT);
+      
       else $value = isset($_POST[$column]) ? $_POST[$column] : '';
-
       $db_arr[$column] = $value;
 }
 
@@ -57,7 +60,7 @@ $table_placeholders = ':' . implode(", :", array_keys($db_arr));
 // $encrypted = password_hash($password, PASSWORD_DEFAULT);      // `users`(`first_name`, `last_name`, `email`, `passwords`, `created_at`, `updated_at`)
                                                                  // ('".$first_name."', '".$last_name."', '".$email."', '".$encrypted."', NOW(), NOW())";
 
-// adding the record
+// adding the record to main table
 try {
     $sql = "INSERT INTO 
                     $table_name($table_properties) 
@@ -68,6 +71,32 @@ try {
 
     $stmt = $conn->prepare($sql);
     $stmt->execute($db_arr);
+
+    $product_id = $conn->lastInsertId();
+
+    // Add supplier
+    if($table_name === 'products'){
+      $suppliers = isset($_POST['suppliers']) ? $_POST['suppliers'] : [];
+      if($suppliers){
+        foreach($suppliers as $supplier){
+          $supplier_data = [
+            'supplier_id' => $supplier,
+            'product_id' => $product_id,
+            'updated_at' => date('Y-m-d H:i:s'),
+            'created_at' => date('Y-m-d H:i:s')
+            
+          ];
+
+          $sql = "INSERT INTO productsuppliers
+                        (supplier, product, updated_at, created_at) 
+                VALUES
+                    (:supplier_id, :product_id, :updated_at, :created_at)";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($supplier_data);
+        }
+      }
+   }
 
     $response = [
         'success' => true,

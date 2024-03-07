@@ -5,8 +5,12 @@ $table_columns_mapping = [
         'first_name', 'last_name', 'email', 'passwords', 'created_at', 'updated_at'
     ],
     'products' => [
-        'product_name', 'description', 'img', 'created_by', 'created_at', 'updated_at', 'suppliers'
+        'product_name', 'description', 'img', 'created_by', 'created_at', 'updated_at'
+    ],
+    'suppliers' => [
+        'supplier_name', 'supplier_location', 'email', 'created_by', 'created_at', 'updated_at'
     ]
+    
 ];
 
 ?>
