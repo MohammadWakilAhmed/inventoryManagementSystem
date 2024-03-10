@@ -120,6 +120,10 @@ div.loginHeader {
   text-align: center;
 }
 
+.alignLeft{
+  text-align: left;
+}
+
 div.loginHeader h1 {
   font-size: 60px;
   color: rgb(0, 0, 0);
@@ -597,7 +601,7 @@ table {
   width: 100%;
 }
 table th {
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
   text-align: center;
   background: #c1d2eb;
@@ -605,7 +609,7 @@ table th {
   padding: 10px;
 }
 table tbody {
-  font-size: 17px;
+  font-size: 14px;
   text-align: center;
   padding: 10px;
 }
@@ -789,4 +793,95 @@ i.mainMenuIconArrow {
 
 }
 
+.poOrderUpdateBtnContainer{
+  margin-top: 20px;
+}
 
+.updatePoBtn{
+  color: #f685a1;
+  background: #fff;
+  border: 1px solid #f685a1;
+}
+
+.updatePoBtn:hover{
+  background: #915700;
+  color: #fff;
+}
+
+.po-badge{
+  padding: 4px 6px;
+  border: 1px solid;
+  background: #b5ebb5;
+}
+
+.po-badge-pending{
+  background: #ff7c76;
+  border-color: #556455;
+}
+
+.po-badge-complete{
+  background: #b5ebb5;
+  border-color: green;
+}
+
+.po-badge-incomplete{
+  background: #f7e640;
+  color: #392b2b;
+  border-color: #a3a3a3;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
+    max-width: 660px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+div.col50{
+  width: 50%;
+}
+
+div.dashboard_content_main{
+  display: flex;
+  flex-direction: row;
+}
+
+div.modal-body {
+  overflow-x: auto;
+  }

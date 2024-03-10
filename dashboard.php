@@ -3,19 +3,20 @@
     session_start();
    if(!isset($_SESSION['user'])) header('location: login.php');
 
-    $user = $_SESSION['user'];   
-    // $_SESSION['user'] = [
-    //    'email' => 'wakilahmedony@ims.com',
-    //    'image' => 'images/user/wakil.jpeg'
-    // ]    
+    $user = $_SESSION['user'];  
+    
+    // get graph data - purchase order by status
+    include('database/po_status_pie_graph.php');
+    // get graph data - supplier order count
+    include('database/supplier_product_bar_graph.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Inventory Management System</title>
-    
+    <title>Dashboard - Inventory Management System</title>  
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <script src="https://kit.fontawesome.com/97c583544d.js" crossorigin="anonymous"></script>
 </head>
@@ -26,13 +27,113 @@
             <?php include('partials/app-topnav.php') ?>
             <div class="dashboard_content">
                 <div class="dashboard_content_main">
-
+                    <div class="col50">
+                        <figure class="highcharts-figure">
+                            <div id="container"></div>
+                            <p class="highcharts-description">
+                                Here is the breakdown of the purchase orders by status.
+                            </p>
+                        </figure>
+                    </div>
+                    <div class="col50">
+                        <figure class="highcharts-figure">
+                            <div id="containerBarChart"></div>
+                            <p class="highcharts-description">
+                                Here is the breakdown of the purchase orders by status.
+                            </p>
+                        </figure>
+                    </div>
                 </div>
             </div>
             
         </div>
     </div>
 <script src="js/script.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+
+<script>
+    var graphData = <?= json_encode($results) ?>;
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Purchase Order By Status'
+        },
+        tooltip: {
+            pointFormatter: function(){
+                var point = this,
+                    series = point.series;
+
+                    return `<b>${point.name}</b>: ${point.y}`  
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.y}'
+                }
+            }
+        },
+        series: [{
+            name: 'Status',
+            colorByPoint: true,
+            data: graphData
+        }]
+    });
+
+
+    var barGraphData = <?= json_encode($bar_chart_data) ?>;
+    var barGraphCategories = <?= json_encode($categories) ?>;
+    Highcharts.chart('containerBarChart', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Product Count Assigned To Supplier'
+        },
+        xAxis: {
+            categories: barGraphCategories,
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Product Count'
+            }
+        },
+        tooltip: {
+            pointFormatter: function(){
+                var point = this,
+                    series = point.series;
+
+                    return `<b>${point.category}</b>: ${point.y}`  
+            }
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [
+            {
+                name: 'Suppliers',
+                data: barGraphData
+            }]
+    });
+
+
+</script>
 </body>
 </html>

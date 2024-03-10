@@ -38,6 +38,7 @@
                                             <th>#</th>
                                             <th>Image</th>
                                             <th>Product Name</th>
+                                            <th>Stock</th>
                                             <th width="20%">Description</th>
                                             <th width="15%">Suppliers</th>
                                             <th>Created By</th>
