@@ -55,6 +55,7 @@
                                                     <img class="productImages" src="uploads/products/<?= $product['img'] ?>" alt="" />
                                                  </td>
                                                 <td class="lastName"><?= $product['product_name'] ?></td>
+                                                <td class="lastName"><?= number_format($product['stock']) ?></td>
                                                 <td class="email"><?= $product['description'] ?></td>
                                                 <td class="email">
                                                     <?php

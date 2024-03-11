@@ -59,6 +59,7 @@
                                                 <th>Status</th>
                                                 <th>Ordered By</th>
                                                 <th>Created Date</th>
+                                                <th>Delivery History</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -77,6 +78,9 @@
                                                     <?= $batch_po ['created_at'] ?>
                                                     <input type="hidden" class="po_qty_row_id" value="<?= $batch_po['id'] ?>">
                                                     <input type="hidden" class="po_qty_productid" value="<?= $batch_po['product'] ?>">
+                                                </td>
+                                                <td>
+                                                    <button class="appbtn appDeliveryHistory" data-id="<?= $batch_po['id'] ?>">Delivery History</button>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -232,6 +236,52 @@
                             }
                         }
                     }); 
+                }
+
+                if(classList.contains('appDeliveryHistory')){
+                    let id = targetElement.dataset.id;
+
+                    $.get('database/view-delivery-history.php', {id: id}, function(data){
+                        if(data.length){
+                            rows = '';
+                            data.forEach((row, id) => {
+                                receivedDate = new Date(row['date_received']);
+                                rows += '\
+                                <tr>\
+                                    <td>'+ (id + 1) +'</td>\
+                                    <td>'+ receivedDate.toUTCString() +'</td>\
+                                    <td>'+ row['qty_received'] +'</td>\
+                                </tr>';
+                            });
+
+                            
+                            deliveryHistoryHtml = '<table class="deliveryHistoryTable">\
+                            <thead>\
+                                <tr>\
+                                    <th>#</th>\
+                                    <th>Date Received</th>\
+                                    <th>Quantity Received</th>\
+                                </tr>\
+                            </thead>\
+                            <tbody>'+ rows +'<tbody>\
+                            </table>';
+                            
+
+                            BootstrapDialog.show({
+                                title: '<strong>No Delivery History</strong>',
+                                type: BootstrapDialog.TYPE_PRIMARY,
+                                message: deliveryHistoryHtml
+                            });
+
+                        } else {
+                            BootstrapDialog.alert({
+                                title: '<strong>No Delivery History</strong>',
+                                type: BootstrapDialog.TYPE_INFO,
+                                message: 'No delivery history found.'
+                            });
+                        }
+
+                    }, 'json');
                 }
             });
         },

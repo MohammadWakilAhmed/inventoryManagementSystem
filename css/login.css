@@ -885,3 +885,18 @@ div.dashboard_content_main{
 div.modal-body {
   overflow-x: auto;
   }
+
+.appDeliveryHistory{
+    border: 1px solid #FF5722;
+    background: none;
+}
+
+.appDeliveryHistory:hover{
+  background: #FF5722;
+  color: #fff;
+}
+
+.deliveryHistoryTable th{
+  font-size: 14px;
+  padding: 10px 20px;
+}
