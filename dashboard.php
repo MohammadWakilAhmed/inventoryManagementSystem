@@ -10,6 +10,9 @@
     // get graph data - supplier order count
     include('database/supplier_product_bar_graph.php');
 
+    // get line graph data - delivery history per day
+    include('database/delivery_history.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +47,8 @@
                         </figure>
                     </div>
                 </div>
+                
+                <div id="deliveryHistory"></div>
             </div>
             
         </div>
@@ -131,6 +136,63 @@
                 name: 'Suppliers',
                 data: barGraphData
             }]
+    });
+
+    var lineCategories = <?= json_encode($line_categories) ?>;
+    var lineData = <?= json_encode($line_data)?>;
+    Highcharts.chart('deliveryHistory', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+        text: 'Delivery History',
+        align: 'left'
+        },
+
+        yAxis: {
+        title: {
+            text: 'Product Delivered'
+        }
+        },
+
+        xAxis: {
+            categories: lineCategories
+        },
+
+        legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+        },
+
+        plotOptions: {
+        series: {
+            label: {
+            connectorAllowed: false
+            },
+        }
+        },
+
+        series: [{
+        name: 'Product Delivered',
+        data: lineData
+        }],
+
+        responsive: {
+        rules: [{
+            condition: {
+            maxWidth: 500
+            },
+            chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+            }
+        }]
+        }
+
     });
 
 
