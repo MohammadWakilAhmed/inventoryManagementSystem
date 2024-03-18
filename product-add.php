@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="appFormInputContainers">
                                     <label for="description">Suppliers</label>
-                                    <select class="supplierOption" name="suppliers[]" id="suppliersSelect" multiple="">
+                                    <select class="supplierOption" name="suppliers[]" id="suppliersSelect">
                                         <option class="supplierOption" value="">Select Supplier</option>
                                         <?php
                                         $show_table = 'suppliers';

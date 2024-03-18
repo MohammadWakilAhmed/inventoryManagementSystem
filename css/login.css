@@ -184,9 +184,9 @@ div.loginButton button {
 
 div.header {
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px 56px;
   background: chocolate;
-  text-align: center;
+  text-align:right;
 }
 
 div.header a {
