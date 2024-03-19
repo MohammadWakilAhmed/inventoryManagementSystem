@@ -24,7 +24,7 @@
                         <p>Export Products</p>
                         <div class="alignRight">
                             <a href="database/report_csv.php?report=product" class="reportExportBtn">Excel</a>
-                            <a href="" class="reportExportBtn">Pdf</a>
+                            <a href="database/report_pdf.php?report=product" class="reportExportBtn">Pdf</a>
                         </div>
                     </div>
                     <div class="reportType">
@@ -39,14 +39,14 @@
                     <div class="reportType">
                         <p>Export Deliveries</p>
                         <div class="alignRight">
-                            <a href="database/report_csv.php?report=products" class="reportExportBtn">Excel</a>
+                            <a href="database/report_csv.php?report=delivery" class="reportExportBtn">Excel</a>
                             <a href="" class="reportExportBtn">Pdf</a>
                         </div>
                     </div>
                     <div class="reportType">
                         <p>Export Purchase Orders</p>
                         <div class="alignRight">
-                            <a href="database/report_csv.php?report=products" class="reportExportBtn">Excel</a>
+                            <a href="database/report_csv.php?report=purchase_orders" class="reportExportBtn">Excel</a>
                             <a href="" class="reportExportBtn">Pdf</a>
                         </div>
                     </div>
